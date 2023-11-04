@@ -58,3 +58,7 @@
 2023-05-31 11:07:02,513 DEBUG [main] cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
 2023-05-31 11:07:02,513 DEBUG [main] cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
 2023-05-31 11:07:02,513 DEBUG [main] cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/s.kadigamugedara_exa/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+2023-11-04 22:31:29,704  INFO [main] HomePage:43 - Validated Logo
+2023-11-04 22:34:30,033  INFO [main] HomePage:43 - Validated Logo
+2023-11-04 22:38:30,760  INFO [main] HomePage:43 - Validated Logo
+2023-11-04 22:49:22,519  INFO [main] HomePage:43 - Validated Logo

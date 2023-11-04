@@ -21,8 +21,8 @@ import org.apache.commons.io.FileUtils;
 
 public class TestUtil extends TestBase {
 
-	public static long PAGE_LOAD_TIMEOUT =40;
-	public static long IMPLICIT_WAIT = 40;
+	public static long PAGE_LOAD_TIMEOUT =70;
+	public static long IMPLICIT_WAIT = 70;
 	
 	
 	public void swithToFrame(String framaName) {

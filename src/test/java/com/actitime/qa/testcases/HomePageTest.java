@@ -25,7 +25,6 @@ public class HomePageTest extends TestBase{
 		loginPage = new LoginPage();
 		homePage = loginPage.loging(properties.getProperty("username"), properties.getProperty("password"));
 		
-		
 	}
 	
 	

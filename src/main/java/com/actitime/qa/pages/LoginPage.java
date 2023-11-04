@@ -15,79 +15,52 @@ import net.bytebuddy.asm.Advice.Return;
 
 public class LoginPage extends TestBase {
 	
-	//Page Factory - Object Repository
-	
-	@FindBy(xpath = "//input[@name='username']")
-	@CacheLookup
-	WebElement userName;
-	
-	
-	
-	
-	@FindBy(xpath = "//input[@type='password'and @name='pwd']")
-	WebElement passWord;
-	
-	@FindBy(xpath = "//a[@id='loginButton']")
-	WebElement loginButton;
-	
-	@FindBy(xpath = "//input[@name='remember']")
-	WebElement keepmeLoggedinCheckBox;
-	
-	@FindBy(xpath = "//a[@id='toPasswordRecoveryPageLink']")
-	WebElement forgotYourPasswordLink;
-	
-	
-	@FindBy(xpath = "//div[@class='atLogoImg']")
-	WebElement actiTimeLogo;
-	
-	
-	Logger log = Logger.getLogger(LoginPage.class);
-	
-	//initialization
-	
-	public LoginPage() {
-		
-		PageFactory.initElements(driver, this);
-		
-		
-		
-	}
-	
-	//Action/Methods
-	
-	public Boolean validateActiTimeLogo() {
-		return actiTimeLogo.isDisplayed();
-		
-	}
-	
-	public HomePage loging(String uName, String pword) {
+	   // Page Factory - OR
+	   @FindBy(xpath = "//*[@id='username']")
+	   WebElement userName;
+   
+	   @FindBy(xpath = "//*[@id='loginFormContainer']/tbody/tr[1]/td/table/tbody/tr[2]/td/input")
+	   WebElement password;
+   
+	   @FindBy(xpath = "//div[@class='atLogoImg']")
+	   WebElement actiTimeLogo;
+
+	   @FindBy(xpath = "//*[@id=\"loginButton\"]/div")
+	   WebElement loginBtn;
+   
+	   // Initializing the Page Objects
+	   public LoginPage() {
+		   PageFactory.initElements(driver, this);
+	   }
+   
+	   // Actions
+	   public String validateLoginPageTitle() {
+		   return driver.getTitle();
+	   }
+	   public HomePage loging(String uName, String pword) {
 		
 		userName.sendKeys(uName);
-		passWord.sendKeys(pword);
-		loginButton.click();
+		password.sendKeys(pword);
+		loginBtn.click();
 		return new HomePage();
 		
 	}
-	
-	public void enterUserName(String uName) {
-		
-		
-		userName.sendKeys(uName);
-		
-		log.info("User name enterd as "+uName);
-	}
-	
-public void enterPassword(String pword) {
-		
-	passWord.sendKeys(pword);
-	}
-	
-public HomePage clickSubmitButton() {
-	
-	loginButton.click();
-	return new HomePage();
-	
-}
+   
+	   public boolean validateActiTimeLogo() {
+		   return actiTimeLogo.isDisplayed();
+	   }
+   
+	   public void enterUserName(String uName) {
+			userName.sendKeys(uName);
+	   }
 
+	   public void enterPassword(String pwd) {
+			password.sendKeys(pwd);
+	   }
+
+	   public HomePage clickSubmitButton() {
+			loginBtn.click();
+			return new HomePage();
+	   }
 
 }

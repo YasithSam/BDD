@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
@@ -40,9 +41,9 @@ public class TestBase {
 		
 String browserName = properties.getProperty("browser");
 		
-		if(browserName.equals("chrome")){
-			System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+ "\\src\\main\\resources\\webDrivers\\chromedriver.exe");
-			driver = new ChromeDriver(); 
+		if(browserName.equals("safari")){
+			System.setProperty("webdriver.chrome.driver","/Users/yasithsam/BDD/src/main/resources/webDrivers/chromedriver");
+			driver = new SafariDriver();
 		}
 		else if(browserName.equals("Firefox")){
 			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+ "\\src\\main\\resources\\webDrivers\\geckodriver.exe");
@@ -61,7 +62,7 @@ String browserName = properties.getProperty("browser");
 		driver = e_driver;
 		
 		driver.manage().window().maximize();
-		driver.manage().deleteAllCookies();
+		//driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
 		
